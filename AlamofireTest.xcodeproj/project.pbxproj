@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		671403B6237C29F20068ED88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 671403B4237C29F20068ED88 /* LaunchScreen.storyboard */; };
 		671403C1237C29F30068ED88 /* AlamofireTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671403C0237C29F30068ED88 /* AlamofireTestTests.swift */; };
 		671403CC237C29F30068ED88 /* AlamofireTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 671403CB237C29F30068ED88 /* AlamofireTestUITests.swift */; };
+		6757C04C23828D320066FD03 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6757C04A23828D320066FD03 /* TableViewCell.swift */; };
+		6757C04D23828D320066FD03 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6757C04B23828D320066FD03 /* TableViewCell.xib */; };
+		6757C0512383CD6F0066FD03 /* HRSlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6757C0502383CD6F0066FD03 /* HRSlideShowViewController.swift */; };
+		6757C0532383F1DB0066FD03 /* burnShortEdited.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6757C0522383F1DB0066FD03 /* burnShortEdited.mp3 */; };
 		6B820F7E162151FCC48C740F /* Pods_AlamofireTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4A5B0A4E6C8686E7FE148DF /* Pods_AlamofireTestTests.framework */; };
 		CC5E881296DE3C0CBECAA136 /* Pods_AlamofireTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 394737809DE2CF1F8E49685A /* Pods_AlamofireTestUITests.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +60,10 @@
 		671403C7237C29F30068ED88 /* AlamofireTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		671403CB237C29F30068ED88 /* AlamofireTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireTestUITests.swift; sourceTree = "<group>"; };
 		671403CD237C29F30068ED88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6757C04A23828D320066FD03 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		6757C04B23828D320066FD03 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		6757C0502383CD6F0066FD03 /* HRSlideShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSlideShowViewController.swift; sourceTree = "<group>"; };
+		6757C0522383F1DB0066FD03 /* burnShortEdited.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = burnShortEdited.mp3; sourceTree = "<group>"; };
 		8A693754FC0337070C9E1866 /* Pods-AlamofireTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireTestTests.debug.xcconfig"; path = "Target Support Files/Pods-AlamofireTestTests/Pods-AlamofireTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C20C9B9BA2354754F87E8D3 /* Pods-AlamofireTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireTest.release.xcconfig"; path = "Target Support Files/Pods-AlamofireTest/Pods-AlamofireTest.release.xcconfig"; sourceTree = "<group>"; };
 		B4A5B0A4E6C8686E7FE148DF /* Pods_AlamofireTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,10 +134,14 @@
 		671403A8237C29EE0068ED88 /* AlamofireTest */ = {
 			isa = PBXGroup;
 			children = (
+				6757C0522383F1DB0066FD03 /* burnShortEdited.mp3 */,
 				671403A9237C29EE0068ED88 /* AppDelegate.swift */,
 				671403AB237C29EE0068ED88 /* SceneDelegate.swift */,
 				671403AD237C29EE0068ED88 /* ViewController.swift */,
+				6757C0502383CD6F0066FD03 /* HRSlideShowViewController.swift */,
 				671403AF237C29EE0068ED88 /* Main.storyboard */,
+				6757C04A23828D320066FD03 /* TableViewCell.swift */,
+				6757C04B23828D320066FD03 /* TableViewCell.xib */,
 				671403B2237C29F20068ED88 /* Assets.xcassets */,
 				671403B4237C29F20068ED88 /* LaunchScreen.storyboard */,
 				671403B7237C29F20068ED88 /* Info.plist */,
@@ -165,7 +177,6 @@
 				BF91F0E1F9AF51BECB947160 /* Pods-AlamofireTestUITests.debug.xcconfig */,
 				3A4466901D7EB5F1681BDE4B /* Pods-AlamofireTestUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -279,6 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				671403B6237C29F20068ED88 /* LaunchScreen.storyboard in Resources */,
+				6757C04D23828D320066FD03 /* TableViewCell.xib in Resources */,
+				6757C0532383F1DB0066FD03 /* burnShortEdited.mp3 in Resources */,
 				671403B3237C29F20068ED88 /* Assets.xcassets in Resources */,
 				671403B1237C29EE0068ED88 /* Main.storyboard in Resources */,
 			);
@@ -408,7 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6757C0512383CD6F0066FD03 /* HRSlideShowViewController.swift in Sources */,
 				671403AE237C29EE0068ED88 /* ViewController.swift in Sources */,
+				6757C04C23828D320066FD03 /* TableViewCell.swift in Sources */,
 				671403AA237C29EE0068ED88 /* AppDelegate.swift in Sources */,
 				671403AC237C29EE0068ED88 /* SceneDelegate.swift in Sources */,
 			);
@@ -585,7 +600,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37MFDT4LMQ;
 				INFOPLIST_FILE = AlamofireTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,7 +620,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 37MFDT4LMQ;
 				INFOPLIST_FILE = AlamofireTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
