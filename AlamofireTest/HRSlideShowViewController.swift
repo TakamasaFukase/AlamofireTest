@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
 
 class HRSlideShowViewController: UIViewController, UITextFieldDelegate {
     
@@ -44,6 +45,7 @@ class HRSlideShowViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         textField.delegate = self
         playSound(name: "burnShortEdited")
+        
     }
     
     

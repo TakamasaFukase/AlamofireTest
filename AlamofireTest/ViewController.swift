@@ -7,20 +7,28 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Foundation
 
-//★★★API通信でライブラリを使わないオーソドックスなやり方の練習
+struct Title: Codable {
+    let title: String
+    let url: String
+}
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    var titles:[Title]?
     
+    @IBOutlet weak var tableView: UITableView!
+
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
     //APIから帰ってきた記事一覧のデータを格納
-    fileprivate var articles: [[String: Any]] = [] {
+    fileprivate var articles: [String] = [] {
         //didSetと書くことで、上の配列に値がセットされるたびに{}内が実行される
         didSet {
             tableView.reloadData()
@@ -30,37 +38,34 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchArticles()
+        afFetchArticles()
         initTableView()
     }
 
     
-    
-    private func fetchArticles() {
-        //API通信リクエストと、取得したdataのJSON型への変換、パースを行なっていく
-        let url: URL = URL(string: "http://qiita.com/api/v2/items")!
+    //AlamofireとswiftyJSONとCodableを使用
+    private func afFetchArticles() {
         
-        let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: {data, response, error in
+        let urlString: String = "http://qiita.com/api/v2/items"
+        
+        Alamofire.request(urlString, method: .get).responseJSON { response in
+            
+            guard let data = response.data else {
+                return
+            }
+            
+            self.titles = try! JSONDecoder().decode([Title].self, from: data)
+            
             do {
-                //guard letでオプショナルdataを代入アンラップ
-                guard let data = data else { return }
-                guard let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? [Any] else { return }
-                //mapを使って配列内の要素１つ１つにクロージャーで渡した処理を行う
-                let articles = json.compactMap { (article) -> [String: Any]? in
-                    return article as? [String: Any]
-                }
-                
-                //メインスレッドで行う様にする書き方
-                DispatchQueue.main.async() { () -> Void in
-                    self.articles = articles
-                }
+                print("取得したタイトル：\(self.titles)")
+                self.tableView.reloadData()
             }
             catch {
                 print(error)
+
             }
             
-        })
-        task.resume()
+        }
     }
     
     
@@ -84,14 +89,25 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        if let count = self.titles?.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
-        let article = articles[indexPath.row]
-        let title = article["title"] as? String ?? ""
-        cell.bindData(text: "タイトル: \(title)")
+        if let title = self.titles?[indexPath.row].title {
+            if let url = self.titles?[indexPath.row].url {
+                cell.bindData(text: "タイトル: \(title)\nURL:\(url)")
+
+            }else {
+                cell.bindData(text: "タイトル: \(title)")
+
+            }
+        }
+        
+
         return cell
     }
     
