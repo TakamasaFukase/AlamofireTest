@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="diP-IL-H9J">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -7,10 +7,67 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--SwithAF View Controller-->
+        <scene sceneID="Wq7-JF-ggK">
+            <objects>
+                <viewController id="diP-IL-H9J" customClass="HRSSwithAFViewController" customModule="AlamofireTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jXo-l5-iYR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGu-hF-rcE">
+                                <rect key="frame" x="298" y="808" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="D8r-Eh-VZu" kind="presentation" id="myg-zT-RuW"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PYi-Hz-ZLU">
+                                <rect key="frame" x="0.0" y="183" width="414" height="414"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QpM-S7-nTt">
+                                <rect key="frame" x="49" y="626" width="317" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZr-pC-FMH">
+                                <rect key="frame" x="67" y="693" width="113" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="startButton:" destination="diP-IL-H9J" eventType="touchUpInside" id="ZcM-Hj-fqC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pf3-d2-kXV" firstAttribute="bottom" secondItem="GZr-pC-FMH" secondAttribute="bottom" constant="139" id="4oL-gS-cym"/>
+                            <constraint firstItem="pf3-d2-kXV" firstAttribute="bottom" secondItem="FGu-hF-rcE" secondAttribute="bottom" constant="24" id="DLf-YD-tzp"/>
+                            <constraint firstItem="FGu-hF-rcE" firstAttribute="leading" secondItem="pf3-d2-kXV" secondAttribute="leading" constant="298" id="F45-cJ-DSt"/>
+                            <constraint firstItem="QpM-S7-nTt" firstAttribute="top" secondItem="PYi-Hz-ZLU" secondAttribute="bottom" constant="29" id="NfE-nE-BcJ"/>
+                            <constraint firstItem="GZr-pC-FMH" firstAttribute="leading" secondItem="pf3-d2-kXV" secondAttribute="leading" constant="67" id="Osn-L3-nWO"/>
+                            <constraint firstItem="PYi-Hz-ZLU" firstAttribute="centerX" secondItem="QpM-S7-nTt" secondAttribute="centerX" id="PPD-Ln-zUH"/>
+                            <constraint firstItem="GZr-pC-FMH" firstAttribute="top" secondItem="QpM-S7-nTt" secondAttribute="bottom" constant="33" id="PaI-rg-5n4"/>
+                            <constraint firstItem="PYi-Hz-ZLU" firstAttribute="leading" secondItem="pf3-d2-kXV" secondAttribute="leading" id="RHO-KE-9dF"/>
+                            <constraint firstItem="PYi-Hz-ZLU" firstAttribute="top" secondItem="pf3-d2-kXV" secondAttribute="top" constant="139" id="ciu-VA-0W9"/>
+                            <constraint firstItem="pf3-d2-kXV" firstAttribute="trailing" secondItem="GZr-pC-FMH" secondAttribute="trailing" constant="234" id="fZn-i7-LYY"/>
+                            <constraint firstItem="QpM-S7-nTt" firstAttribute="leading" secondItem="pf3-d2-kXV" secondAttribute="leading" constant="49" id="oHf-hG-hJM"/>
+                            <constraint firstItem="PYi-Hz-ZLU" firstAttribute="centerX" secondItem="jXo-l5-iYR" secondAttribute="centerX" id="qnS-DF-MhB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pf3-d2-kXV"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="PYi-Hz-ZLU" id="fSW-fh-OpT"/>
+                        <outlet property="textField" destination="QpM-S7-nTt" id="hxv-iB-Zm5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yej-gO-Ugi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-775.36231884057975" y="101.78571428571428"/>
+        </scene>
         <!--Slide Show View Controller-->
         <scene sceneID="5GB-lP-LM7">
             <objects>
-                <viewController id="D8r-Eh-VZu" customClass="HRSlideShowViewController" customModule="AlamofireTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="D8r-Eh-VZu" customClass="HRSlideShowViewController" customModule="AlamofireTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AbV-lW-ZrL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +180,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="P7U-jB-wgm"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API通信 ライブラリなし" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnT-Wn-1F0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API通信 ライブラリ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnT-Wn-1F0">
                                 <rect key="frame" x="32" y="44" width="350" height="92"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>

@@ -9,8 +9,11 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import Foundation
+
 
 class HRSlideShowViewController: UIViewController, UITextFieldDelegate {
+    
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
